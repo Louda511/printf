@@ -30,10 +30,11 @@ int _printf(const char *format, ...)
 				{
 					case 's':
 						s = va_arg(args, char*);
-						while (*s)
+						while (*s && s != NULL)
 						{
 							putchar(*s);
 							s++;
+							len++;
 						}
 						format++;
 						break;
@@ -42,10 +43,12 @@ int _printf(const char *format, ...)
 					       	c = va_arg(args, int);
                                                 putchar(c);
                                                 format ++;
+						len++;
                                                 break;
 
 					case '%':
 						putchar('%');
+						len++;
 						break;
 				}
 
