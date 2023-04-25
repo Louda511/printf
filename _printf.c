@@ -50,6 +50,8 @@ int _printf(const char *format, ...)
 						putchar('%');
 						len++;
 						break;
+					default:
+						break;
 				}
 
 			}
